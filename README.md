@@ -4,6 +4,12 @@
 
 ---
 
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://johneliudodhiambo.vercel.app)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/john-odhiambo-6b1863307)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:johneliud4@gmail.com)
+
+---
+
 ## About Me
 
 Full stack developer with 2+ years building scalable web applications, mobile applications, and AI/ML systems. I specialize in machine learning pipelines, few-shot learning, and high-performance production APIs, with a consistent track record of delivering quality work on time.

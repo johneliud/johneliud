@@ -12,7 +12,7 @@
 
 ## About Me
 
-Full stack developer with 2+ years building scalable web applications, mobile applications, and AI agents. I specialize in high-performance production APIs, with a consistent track record of delivering quality work on time.
+Full stack developer with 3 years building scalable web applications, mobile applications, and AI agents. I specialize in high-performance production APIs, with a consistent track record of delivering quality work on time.
 
 Passionate about democratizing AI through education and mentorship.
 

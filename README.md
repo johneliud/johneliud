@@ -35,4 +35,4 @@ Passionate about democratizing AI through education and mentorship.
 
 ---
 
-*Utilizing The Power Of Code To Tackle Pressing Issues.*
+**Utilizing The Power Of Code To Tackle Pressing Issues.**

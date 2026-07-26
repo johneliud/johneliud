@@ -22,7 +22,7 @@ Passionate about democratizing AI through education and mentorship.
 
 | **Backend**                                                                 | **Frontend**                                      | **DevOps & Tools**                                      |
 |------------------------------------------------------------------------------|-----------------------------------------------------|------------------------------------------------------------|
-| **Languages:**<br>`Go`, `Java`, `Rust`  | **Languages:**<br>`JavaScript`    | **Tools:**<br>`Docker`, `Git`, `GitHub`         |
+| **Languages:**<br>`Go`, `Java`, `Rust`  | **Languages:**<br>`JavaScript`, `Tailwind CSS`, `Nativewind`    | **Tools:**<br>`Docker`, `Git`, `GitHub`         |
 | **Frameworks:**<br>`Gin`, `Spring Boot`                                         | **Libraries:**<br>`React`, `Angular`, `React Native with Expo` | **Others:**<br>`Agentic AIs`    |
 | **Databases:**<br>`PostgreSQL`, `SQLite`, `MongoDB`                             |                                                     |                                                            |
 

@@ -1,6 +1,6 @@
 # Hello, I am John Eliud Odhiambo
 
-**Full Stack Developer | AI/ML Specialist**
+**Full Stack Developer**
 
 ---
 
@@ -12,18 +12,19 @@
 
 ## About Me
 
-Full stack developer with 2+ years building scalable web applications, mobile applications, and AI/ML systems. I specialize in machine learning pipelines, few-shot learning, and high-performance production APIs, with a consistent track record of delivering quality work on time.
+Full stack developer with 2+ years building scalable web applications, mobile applications, and AI agents. I specialize in high-performance production APIs, with a consistent track record of delivering quality work on time.
 
 Passionate about democratizing AI through education and mentorship.
 
 ---
 
-## Tech Stack
+## Tech Stack & Tools
 
-- **Languages**: Go, TypeScript, Java
-- **AI / ML**: Few-Shot Learning, Computer Vision, ML Pipelines, Vision Transformers (ViT)
-- **Backend**: REST API Design, OpenAPI, JWT / OAuth, Microservices, System Design & Architecture
-- **Frontend**: React, React Native, Angular
+| **Backend**                                                                 | **Frontend**                                      | **DevOps & Tools**                                      |
+|------------------------------------------------------------------------------|-----------------------------------------------------|------------------------------------------------------------|
+| **Languages:**<br>`Go`, `Java`, `Rust`  | **Languages:**<br>`JavaScript`    | **Tools:**<br>`Docker`, `Git`, `GitHub`         |
+| **Frameworks:**<br>`Gin`, `Spring Boot`                                         | **Libraries:**<br>`React`, `Angular`, `React Native with Expo` | **Others:**<br>`Agentic AIs`    |
+| **Databases:**<br>`PostgreSQL`, `SQLite`, `MongoDB`                             |                                                     |                                                            |
 
 ---
 

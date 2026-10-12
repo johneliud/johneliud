@@ -37,4 +37,32 @@ I bridge the gap between complex software engineering and high-impact business o
 
 ---
 
+## Notable Projects
+
+### [Neo4flix](https://github.com/johneliud/neo4flix) - Microservices Movie Recommendation Platform
+
+Neo4flix is a full-stack, microservices-based movie recommendation platform designed around domain isolation, stateless services, and polyglot persistence.
+
+The backend consists of five independently deployable Spring Boot 4 (Java 25, Maven) services fronted by a reactive Spring Cloud Gateway (WebFlux) that acts as the single entry point that handles centralized JWT (JJWT HS256) validation and user-context propagation, Bucket4j-based rate limiting (e.g. 5 logins / 15 min / IP), CORS, and security headers.
+
+The User Microservice owns identity through registration, login, refresh-token rotation, TOTP-based 2FA, profile management, and watchlists backed by PostgreSQL 15 via Spring Data JPA/Hibernate with Flyway migrations and Spring Security 7. The Movie, Rating, and Recommendation services share a Neo4j 5 graph via Spring Data Neo4j. Movie Service manages the catalog as entities with paginated multi-filter Cypher search and admin-only writes. Rating Service models edges, validates movie existence against the Movie Service, and propagates average-rating updates back. Recommendation Service is a stateless read-only engine that runs raw Cypher to combine collaborative filtering with content-based filtering, then merges, dedupes, scores by relevance, filters, and paginates.
+
+All services share a consistent security model (tokens issued by User Service, validated locally with a shared secret), error handling, Jakarta Validation, Lombok records-based DTOs, and unit test coverage.
+
+The frontend is an Angular 21 SSR application with standalone components, signals, reactive forms, RxJS, JWT interceptors, role-based route guards, Tailwind CSS 4 styling, and Vitest coverage, orchestrated locally with Docker Compose and a `start-services.sh` multi-terminal boot script.
+
+### [buy-01](https://github.com/johneliud/buy-01) - Microservices E-Commerce Marketplace
+
+buy-01 is an end-to-end e-commerce marketplace built around role-based commerce, event-driven consistency, and independent deployability.
+
+The backend consists of five independently deployable Spring Boot 4 (Java 25, Maven) services fronted by a reactive Spring Cloud Gateway that acts as the single entry point that handles centralized JWT validation and user-context propagation, Bucket4j-based rate limiting (e.g. 5 logins / 15 min / IP), CORS, and security headers.
+
+The User Service owns identity through client/seller registration, JWT authentication with 24-hour expiry, BCrypt password hashing, profile and avatar management, and role-based access control. The Product Service manages the catalog with CRUD, name/description search, price-range and category filtering, sorting, pagination, and stock tracking. The Media Service handles multi-image product uploads with type/size validation and serving. The Order Service owns the persistent cart, pay-on-delivery checkout with delivery address, and the full order lifecycle PENDING - CONFIRMED - SHIPPED - DELIVERED with buyer cancellation and seller status advancement plus paginated, searchable order views.
+
+Services stay decoupled through Apache Kafka (Confluent 7.5.0, local via Docker Compose with Zookeeper): `product-deleted` drives automatic media cleanup, `order-placed` feeds user analytics and product stock updates, and `order-status-changed` keeps profiles in sync. Each service owns its MongoDB Atlas database for cloud-native persistence without local DB setup. Analytics close the loop with buyer spend / most-purchased insights and seller revenue / best-seller stats.
+
+The frontend is an Angular 21 SSR application with standalone components, signals, reactive forms, RxJS, JWT interceptors, role-based route guards, Tailwind CSS 4 styling, and Vitest coverage, orchestrated locally with Docker Compose and a `start-services.sh` multi-terminal boot script.
+
+---
+
 **Utilizing The Power Of Code To Tackle Pressing Issues.**

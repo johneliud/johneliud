@@ -63,6 +63,16 @@ Services stay decoupled through Apache Kafka (Confluent 7.5.0, local via Docker 
 
 The frontend is an Angular 21 SSR application with standalone components, signals, reactive forms, RxJS, JWT interceptors, role-based route guards, Tailwind CSS 4 styling, and Vitest coverage, orchestrated locally with Docker Compose and a `start-services.sh` multi-terminal boot script.
 
+### [netcat](https://github.com/johneliud/netcat) - Concurrent TCP Group Chat in Go
+
+netcat is a from-scratch reimplementation of NetCat as a concurrent TCP group-chat system, built with dependency-free Go 1.22 using only the standard library.
+
+The server listens on a configurable port (default `:8989`, validated to 1024-65535), accepts connections in a loop, and hands each one off to a goroutine. Shared state, the client registry (capped at 10 concurrent connections with backpressure), message history, and broadcast fan-out is guarded by `sync.Mutex` pairs  to stay race-safe under concurrent joins, leaves, and broadcasts.
+
+The connection lifecycle is deliberately hardened: ASCII-art banner on connect, handshake with empty-name and case-insensitive duplicate-name rejection, a 60-second join timeout that is cleared after authentication, replay of persisted chat history to late joiners, join/leave notifications fanned out to all peers except the originator, timestamped `[DATETIME][username]:` prompts, 4KB message framing with empty-message rejection, and graceful EOF handling with registry cleanup.
+
+The result is a small but technically complete study in low-level networking: TCP socket management, per-connection goroutines, mutex-synchronized shared memory, deadline-based resource protection, and a text protocol interoperable with the real `nc` client all with zero external dependencies.
+
 ---
 
 **Utilizing The Power Of Code To Tackle Pressing Issues.**

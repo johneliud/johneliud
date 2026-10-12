@@ -63,7 +63,7 @@ Services stay decoupled through Apache Kafka (Confluent 7.5.0, local via Docker 
 
 The frontend is an Angular 21 SSR application with standalone components, signals, reactive forms, RxJS, JWT interceptors, role-based route guards, Tailwind CSS 4 styling, and Vitest coverage, orchestrated locally with Docker Compose and a `start-services.sh` multi-terminal boot script.
 
-### [netcat](https://github.com/johneliud/netcat) - Concurrent TCP Group Chat in Go
+### [netcat](https://github.com/johneliud/netcat) - Concurrent TCP Group Chat
 
 netcat is a from-scratch reimplementation of NetCat as a concurrent TCP group-chat system, built with dependency-free Go 1.22 using only the standard library.
 

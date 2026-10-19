@@ -39,7 +39,7 @@ I bridge the gap between complex software engineering and high-impact business o
 
 ## Notable Projects
 
-### [Neo4flix](https://github.com/johneliud/neo4flix) - Microservices Movie Recommendation Platform
+### [neo4flix](https://github.com/johneliud/neo4flix) - Microservices Movie Recommendation Platform
 
 Neo4flix is a full-stack, microservices-based movie recommendation platform built around domain isolation, stateless services, and polyglot persistence, pairing five Spring Boot services with an Angular SSR frontend.
 

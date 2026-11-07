@@ -39,7 +39,7 @@ I bridge the gap between complex software engineering and high-impact business o
 
 ## Notable Projects
 
-### [neo4flix](https://github.com/johneliud/neo4flix) - Movie Recommendation Platform
+### [neo4flix](https://github.com/johneliud/neo4flix)
 
 Five Spring Boot microservices and an Angular SSR frontend, with a graph database powering recommendations.
 
@@ -50,7 +50,7 @@ Five Spring Boot microservices and an Angular SSR frontend, with a graph databas
 
 **Stack:** Java Spring Boot, PostgreSQL, Neo4j, Angular, Tailwind CSS, Docker
 
-### [buy-01](https://github.com/johneliud/buy-01) - E-Commerce Marketplace
+### [buy-01](https://github.com/johneliud/buy-01)
 
 A buyer and seller marketplace built on five independently deployable services, kept consistent through Kafka events.
 
@@ -61,7 +61,7 @@ A buyer and seller marketplace built on five independently deployable services, 
 
 **Stack:** Java Spring Boot, Kafka, MongoDB Atlas, Angular, Tailwind CSS
 
-### [netcat](https://github.com/johneliud/netcat) - Concurrent TCP Group Chat
+### [netcat](https://github.com/johneliud/netcat)
 
 A from-scratch NetCat-style group chat server in Go, using only the standard library.
 

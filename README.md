@@ -48,7 +48,7 @@ Five Spring Boot microservices and an Angular SSR frontend, with a graph databas
 - **Recommendations:** A shared Neo4j graph drives filtered catalog search and ratings, and a stateless engine blends collaborative and content-based filtering.
 - **Frontend:** Angular 21 with signals, JWT interceptors, and role-based guards for admin-only catalog management.
 
-**Stack:** Java 25, Spring Boot 4, PostgreSQL, Neo4j, Angular 21, Tailwind CSS 4, Docker Compose
+**Stack:** Java Spring Boot, PostgreSQL, Neo4j, Angular, Tailwind CSS, Docker
 
 ### [buy-01](https://github.com/johneliud/buy-01) - E-Commerce Marketplace
 
@@ -59,7 +59,7 @@ A buyer and seller marketplace built on five independently deployable services, 
 - **Security:** Gateway-level JWT validation, BCrypt password hashing, and role-based access for clients and sellers.
 - **Insights:** Spend and most-purchased stats for buyers, revenue and best-sellers for sellers, with a separate MongoDB Atlas database per service.
 
-**Stack:** Java 25, Spring Boot 4, Kafka, MongoDB Atlas, Angular 21 SSR, Tailwind CSS 4
+**Stack:** Java Spring Boot, Kafka, MongoDB Atlas, Angular, Tailwind CSS
 
 ### [netcat](https://github.com/johneliud/netcat) - Concurrent TCP Group Chat
 
@@ -70,9 +70,9 @@ A from-scratch NetCat-style group chat server in Go, using only the standard lib
 - **Chat features:** Name validation (empty and duplicate names rejected), history replay for late joiners, join/leave notices, and timestamped prompts.
 - **Compatibility:** Works with the real `nc` client.
 
-**Stack:** Go 1.22 (standard library only)
+**Stack:** Go
 
-### Log Ingestion Engine
+### [log_ingestion_engine](https://github.com/johneliud/log_ingestion_engine)
 
 A Go service that accepts logs over HTTP and moves them reliably through RabbitMQ into storage, with built-in monitoring.
 

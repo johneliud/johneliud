@@ -39,35 +39,49 @@ I bridge the gap between complex software engineering and high-impact business o
 
 ## Notable Projects
 
-### [neo4flix](https://github.com/johneliud/neo4flix) - Microservices Movie Recommendation Platform
+### [neo4flix](https://github.com/johneliud/neo4flix) - Movie Recommendation Platform
 
-Neo4flix is a full-stack, microservices-based movie recommendation platform built around domain isolation, stateless services, and polyglot persistence, pairing five Spring Boot services with an Angular SSR frontend.
+Five Spring Boot microservices and an Angular SSR frontend, with a graph database powering recommendations.
 
-- **Gateway & services:** Five independently deployable Spring Boot 4 (Java 25, Maven) services behind a reactive Spring Cloud Gateway (WebFlux) handling centralized JWT (JJWT HS256) validation, user-context propagation, Bucket4j rate limiting, CORS, and security headers.
-- **User Service:** Identity via registration, login, refresh-token rotation, TOTP 2FA, profiles, and watchlists on PostgreSQL 15 with Spring Data JPA/Hibernate, Flyway migrations, and Spring Security 7.
-- **Movie / Rating / Recommendation Services:** Shared Neo4j 5 graph via Spring Data Neo4j; paginated multi-filter Cypher catalog search, edge-based ratings, and a stateless read-only engine blending collaborative and content-based filtering.
-- **Cross-cutting:** Shared-secret token model, centralized error handling, Jakarta Validation, Lombok record DTOs, and unit test coverage.
-- **Frontend:** Angular 21 SSR app with standalone components, signals, reactive forms, RxJS, JWT interceptors, and role-based route guards for admin-only catalog management; Tailwind CSS 4 styling and Vitest coverage, run via Docker Compose and `start-services.sh`.
+- **Gateway:** Spring Cloud Gateway validates JWTs centrally, passes user context downstream, and handles rate limiting, CORS, and security headers.
+- **Identity:** Registration, login, refresh-token rotation, TOTP 2FA, and watchlists on PostgreSQL, with Flyway migrations.
+- **Recommendations:** A shared Neo4j graph drives filtered catalog search and ratings, and a stateless engine blends collaborative and content-based filtering.
+- **Frontend:** Angular 21 with signals, JWT interceptors, and role-based guards for admin-only catalog management.
 
-### [buy-01](https://github.com/johneliud/buy-01) - Microservices E-Commerce Marketplace
+**Stack:** Java 25, Spring Boot 4, PostgreSQL, Neo4j, Angular 21, Tailwind CSS 4, Docker Compose
 
-buy-01 is an end-to-end e-commerce marketplace built around role-based commerce, event-driven consistency, and independent deployability, backing an Angular SSR storefront with five Spring Boot services.
+### [buy-01](https://github.com/johneliud/buy-01) - E-Commerce Marketplace
 
-- **Gateway & services:** Five independently deployable Spring Boot 4 (Java 25, Maven) services behind a reactive Spring Cloud Gateway handling centralized JWT validation, user-context propagation, Bucket4j rate limiting, CORS, and security headers.
-- **User Service:** Identity with client/seller registration, JWT authentication (24-hour expiry), BCrypt hashing, avatar management, and role-based access control.
-- **Product / Media / Order Services:** Catalog CRUD with search, price/category filtering, sorting, pagination, and stock tracking; multi-image uploads with type/size validation; persistent cart with pay-on-delivery checkout and the full PENDING - CONFIRMED - SHIPPED - DELIVERED lifecycle.
-- **Eventing:** Apache Kafka (Confluent 7.5.0, local via Docker Compose with Zookeeper) decouples services through `product-deleted`, `order-placed`, and `order-status-changed` events.
-- **Persistence & analytics:** Per-service MongoDB Atlas databases; buyer spend / most-purchased and seller revenue / best-seller insights.
-- **Frontend:** Angular 21 SSR storefront with standalone components, signals, and reactive forms driving catalog browsing, cart/checkout, and seller dashboards; JWT interceptors and role-based guards enforce buyer/seller access, styled with Tailwind CSS 4 and tested with Vitest.
+A buyer and seller marketplace built on five independently deployable services, kept consistent through Kafka events.
+
+- **Commerce flow:** Catalog with search, filters, and stock tracking; multi-image uploads; a persistent cart; and pay-on-delivery orders through a full lifecycle (Pending → Confirmed → Shipped → Delivered).
+- **Event-driven:** Kafka events (`product-deleted`, `order-placed`, `order-status-changed`) keep services in sync without direct coupling.
+- **Security:** Gateway-level JWT validation, BCrypt password hashing, and role-based access for clients and sellers.
+- **Insights:** Spend and most-purchased stats for buyers, revenue and best-sellers for sellers, with a separate MongoDB Atlas database per service.
+
+**Stack:** Java 25, Spring Boot 4, Kafka, MongoDB Atlas, Angular 21 SSR, Tailwind CSS 4
 
 ### [netcat](https://github.com/johneliud/netcat) - Concurrent TCP Group Chat
 
-netcat is a from-scratch reimplementation of NetCat as a concurrent TCP group-chat system, built with dependency-free Go 1.22 using only the standard library.
+A from-scratch NetCat-style group chat server in Go, using only the standard library.
 
-- **Server model:** Listens on a configurable port (default `:8989`, validated 1024-65535) and hands each connection off to its own goroutine.
-- **Concurrency:** Mutex-guarded shared state covering the client registry (capped at 10 connections with backpressure), message history, and broadcast fan-out.
-- **Lifecycle:** ASCII-art banner, handshake with empty-name and case-insensitive duplicate-name rejection, 60-second join timeout, history replay for late joiners, join/leave notifications, timestamped `[DATETIME][username]:` prompts, 4KB message framing, and graceful EOF cleanup.
-- **Scope:** A low-level networking study in TCP sockets, per-connection goroutines, mutex-synchronized memory, and deadline-based resource protection, interoperable with the real `nc` client.
+- **Concurrency:** One goroutine per connection, with mutex-guarded shared state for the client registry, message history, and broadcasts.
+- **Resource protection:** 10-client cap, 60-second join timeout, 4KB message framing, and graceful cleanup on disconnect.
+- **Chat features:** Name validation (empty and duplicate names rejected), history replay for late joiners, join/leave notices, and timestamped prompts.
+- **Compatibility:** Works with the real `nc` client.
+
+**Stack:** Go 1.22 (standard library only)
+
+### Log Ingestion Engine
+
+A Go service that accepts logs over HTTP and moves them reliably through RabbitMQ into storage, with built-in monitoring.
+
+- **Reliable delivery:** Persistent messages with publisher confirms, auto-reconnect with backoff, and consumers that acknowledge only after a log is stored.
+- **Failure handling:** A fallback consumer stores logs directly when the queue is unavailable, and dead-lettered logs are written as NDJSON and replayed with a `cmd/replay` command.
+- **Storage:** Three SQLite databases, with one consumer per destination queue.
+- **Protection and visibility:** Token-bucket rate limiting, a metrics endpoint, and a Tailwind dashboard with charts.
+
+**Stack:** Go, RabbitMQ, SQLite, REST, Tailwind CSS
 
 ---
 

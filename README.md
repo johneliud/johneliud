@@ -81,7 +81,7 @@ A Go service that accepts logs over HTTP and moves them reliably through RabbitM
 - **Storage:** Three SQLite databases, with one consumer per destination queue.
 - **Protection and visibility:** Token-bucket rate limiting, a metrics endpoint, and a Tailwind dashboard with charts.
 
-**Stack:** Go, RabbitMQ, SQLite, REST, Tailwind CSS
+**Stack:** Go, RabbitMQ, SQLite, REST, React, Tailwind CSS
 
 ---
 

@@ -85,4 +85,4 @@ A Go service that accepts logs over HTTP and moves them reliably through RabbitM
 
 ---
 
-**Utilizing The Power Of Code To Tackle Pressing Issues.**
+**Utilizing The Power Of Code To Tackle Pressing Issues. I am not a GOAT but I fit the description. **

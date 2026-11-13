@@ -37,6 +37,12 @@ I bridge the gap between complex software engineering and high-impact business o
 
 ---
 
+## How I Build
+
+![From Idea to Production](/imgs/Full-stack-build-2026-11-13-082433.png)
+
+---
+
 ## Notable Projects
 
 ### [neo4flix](https://github.com/johneliud/neo4flix)

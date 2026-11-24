@@ -39,7 +39,7 @@ I bridge the gap between complex software engineering and high-impact business o
 
 ## How I Ship (Idea to Production)
 
-![Idea to Production](/imgs/Full-stack-build-2026-11-13-082433.png)
+![Idea to Production](/imgs/Full-stack-build-2026-11-24-063531.png)
 
 ---
 
